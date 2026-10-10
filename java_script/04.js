@@ -305,6 +305,197 @@ let input = "5";
 if (input !== "0") {
     console.log("Input is not equal to '0'");
 }
+//Part C] Relational Operator
+//------topic= Greater Than-------
+
+ //question no. -1. 
+ let studentMarks = 78;
+ let passingMarks= 40;
+ let result = studentMarks > passingMarks;
+ console.log("is student pass ?",result)
+
+// question no. -2.
+let todayTemperature=35;
+let yesterdayTemperature= 28;
+let result = todayTemperature> yesterdayTemperature;
+console.log("today is hotter ?", result)
+
+// question no. -3.
+// console.log(15 > 10);-----true
+// console.log(10 > 15);-----false
+// console.log(10 > 10);-----false
+
+// question no. -4.
+// console.log("20" > 15);-----------true
+// console.log("5" > "10");----------true
+// console.log("abc" > 10);----------Nan
+
+// question no. -5.
+//console.log(null>0)----------false(because value of null is o)
+//console.log(undefined>0)-------Nan (because  value of undefined is nan)
+
+// question no. -6.
+let items=120;
+let itemsToBuy =85;
+let result = items > itemsToBuy;
+console.log( "if stock is sufficient?", result)
+
+// question no. -7.
+// console.log(true > false);--------true
+// console.log("10" > "2");----------false
+// console.log(NaN > 5);-------------false
+
+//------topic= less Than-------
+// question no. -1.
+let maximumWeight = 50;
+let currentWeight = 42;
+let result = maximumWeight < currentWeight;
+console.log( "more items can still be added?", result)
+
+// question no. -2.
+let personAge = 16;
+let minimumAge = 18;
+let result = personAge<minimumAge;
+console.log("the person is underage?" , result)
+
+// question no. -3.
+// console.log(8 < 12);------> true
+// console.log(20 < 10);------> false
+// console.log(7 < 7);--------> false
+
+// question no. -4.
+// console.log("8" < 10);-------->true
+// console.log("20" < "3");------->true
+// console.log("hello" < 5);------>NaN
+
+// question no. -5.
+//console.log(null<0)----------false(because value of null is o)
+//console.log(undefined<0)-------Nan (because  value of undefined is nan)
+
+// question no. -6.
+let capacity = 500;
+let CurrentwaterLevel = 375;
+let result =  capacity < currentWaterLevel;
+console.log("if it is not full?",result)  
+
+// question no. -7.
+// console.log(false < true);-----> true
+// console.log("5" < "15");-------->false
+// console.log(NaN < 10);--------->
+
+
+//-------topic= Greater Than or Equal To (>=)-------
+
+// question no.-1.
+let minimumMarks = 75;
+let studentMarks = 75;
+let result = studentMarks >= minimumMarks;
+console.log("student gets distinction ?", result);
+
+// question no.-2.
+let ticketPrice = 300;
+let money = 300;
+let result2 = money >= ticketPrice;
+console.log("can buy ticket ?", result2);
+
+// question no.-3.
+// console.log(25 >= 25);------true
+// console.log(30 >= 25);------true
+// console.log(20 >= 25);------false
+
+// question no.-4.
+// console.log("25" >= 25);------true
+// console.log("10" >= "2");------false
+// console.log(null >= 0);------true
+
+// question no.-5.
+// console.log(undefined >= 0);------false (because undefined converts to NaN)
+
+// question no.-6.
+let people = 8;
+let liftCapacity = 8;
+let result3 = people >= liftCapacity;
+console.log("lift is full or overloaded ?", result3);
+
+// question no.-7.
+// console.log(true >= 1);------true
+// console.log("" >= 0);------true
+// console.log(NaN >= NaN);------false
+
+
+//-------topic= Less Than or Equal To (<=)-------
+
+// question no.-1.
+let speedLimit = 60;
+let vehicleSpeed = 60;
+let result4 = vehicleSpeed <= speedLimit;
+console.log("vehicle is within speed limit ?", result4);
+
+// question no.-2.
+let passingMarks = 40;
+let marks = 39;
+let result5 = marks < passingMarks;
+console.log("student has failed ?", result5);
+
+// question no.-3.
+// console.log(15 <= 20);------true
+// console.log(20 <= 15);------false
+// console.log(15 <= 15);------true
+
+// question no.-4.
+// console.log("15" <= 20);------true
+// console.log("30" <= "5");------true
+// console.log(null <= 0);------true
+
+// question no.-5.
+// console.log(undefined <= 0);------false (because undefined converts to NaN)
+
+// question no.-6.
+let books = 10;
+let bagCapacity = 10;
+let result6 = books < bagCapacity;
+console.log("can add more books ?", result6);
+
+// question no.-7.
+// console.log(false <= 0);------true
+// console.log("" <= 0);------true
+// console.log(NaN <= 5);------false
+
+
+//-------topic= Mixed Practice (>, <, >=, <=)-------
+
+// question no.-1.
+// console.log(18 >= 18);------true
+// console.log(32 < 35);------true
+// console.log(90 > 85);------true
+
+// question no.-2.
+// console.log(10 > 5 && 5 < 10);------true
+// console.log("10" >= 10);------true
+// console.log(null <= undefined);------false
+// console.log("5" < "10" && 5 > 2);------false
+
+// question no.-3.
+let productPrice = 499;
+let customerMoney = 500;
+let canBuy = customerMoney >= productPrice;
+let changeLeft = customerMoney > productPrice;
+
+console.log("customer can buy product ?", canBuy);
+console.log("change will be left ?", changeLeft);
+
+// question no.-4.
+// console.log("10" > "2");------false
+// console.log(10 > 2);------true
+// (Strings are compared lexicographically, while numbers are compared numerically.)
+
+
+
+
+
+
+
+
 
 
 
