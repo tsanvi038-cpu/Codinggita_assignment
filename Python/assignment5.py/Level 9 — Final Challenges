@@ -1,0 +1,58 @@
+#Level 9 — Final Challenges
+#68
+n = int(input())
+digits = total = even = odd = 0
+largest = 0
+smallest = 9
+
+for i in range(len(str(n))):
+    d = n % 10
+    digits += 1
+    total += d
+
+    if d > largest:
+        largest = d
+    if d < smallest:
+        smallest = d
+
+    if d % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+    n //= 10
+
+print("Digits:", digits)
+print("Sum:", total)
+print("Largest:", largest)
+print("Smallest:", smallest)
+print("Even Digits:", even)
+print("Odd Digits:", odd)
+
+#69
+s = input()
+vowels = consonants = upper = lower = even = 0
+
+for i in range(len(s)):
+    ch = s[i]
+
+    if i % 2 == 0:
+        even += 1
+
+    if ch.isalpha():
+        if ch.lower() in "aeiou":
+            vowels += 1
+        else:
+            consonants += 1
+
+        if ch.isupper():
+            upper += 1
+        else:
+            lower += 1
+
+print("Total Characters:", len(s))
+print("Vowels:", vowels)
+print("Consonants:", consonants)
+print("Uppercase:", upper)
+print("Lowercase:", lower)
+print("Even Index Characters:", even)

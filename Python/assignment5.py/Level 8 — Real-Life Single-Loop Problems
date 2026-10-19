@@ -1,0 +1,105 @@
+#Level 8 — Real-Life Single-Loop Problems
+
+
+
+#62
+n = int(input())
+total = 0
+for i in range(n):
+    expense = int(input())
+    total += expense
+    if i == 0:
+        highest = lowest = expense
+    else:
+        if expense > highest:
+            highest = expense
+        if expense < lowest:
+            lowest = expense
+print("Total:", total)
+print("Highest:", highest)
+print("Lowest:", lowest)
+
+#63
+n = int(input())
+total = 0
+
+for i in range(n):
+    marks = int(input())
+    total += marks
+
+    if i == 0:
+        high = low = marks
+    else:
+        if marks > high:
+            high = marks
+        if marks < low:
+            low = marks
+
+print("Total:", total)
+print("Average:", total / n)
+print("Highest:", high)
+print("Lowest:", low)
+
+#64
+n = int(input())
+present = 0
+absent = 0
+
+for i in range(n):
+    status = input().upper()
+
+    if status == "P":
+        present += 1
+    else:
+        absent += 1
+
+print("Present:", present)
+print("Absent:", absent)
+print("Attendance:", round(present / n * 100, 2), "%")
+
+#65
+n = int(input())
+total = 0
+count = 0
+
+for i in range(n):
+    units = int(input())
+    total += units
+
+    if units > 10:
+        count += 1
+
+print("Total Units:", total)
+print("Days Above 10:", count)
+
+#66
+n = int(input())
+total = 0
+count = 0
+
+for i in range(n):
+    price = int(input())
+    total += price
+
+    if price > 1000:
+        count += 1
+
+print("Total Bill:", total)
+print("Products Above 1000:", count)
+
+#67
+n = int(input())
+success = 0
+failed = 0
+
+for i in range(n):
+    status = input().lower()
+
+    if status == "success":
+        success += 1
+    else:
+        failed += 1
+
+print("Successful:", success)
+print("Failed:", failed)
+print("Success Rate:", round(success / n * 100, 2), "%")

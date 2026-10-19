@@ -1,0 +1,67 @@
+#Level 5 — String & Character Logic
+
+#37
+s = input()
+for i in range(len(s)):
+    print(i, s[i])
+
+#38
+s = input()
+count = 0
+for ch in s:
+    count += 1
+print(count)
+
+#39
+s = input().lower()
+vowels = 0
+consonants = 0
+for ch in s:
+    if ch in "aeiou":
+        vowels += 1
+    elif ch.isalpha():
+        consonants += 1
+print("Vowels =", vowels, "Consonants =", consonants)
+
+#40
+s, target = input().split()
+count = 0
+for ch in s:
+    if ch == target:
+        count += 1
+print(count)
+
+#41
+s, target = input().split()
+position = -1
+for i in range(len(s)):
+    if s[i] == target and position == -1:
+        position = i
+if position == -1:
+    print("Not Found")
+else:
+    print(position)
+
+#42
+s = input()
+upper = 0
+lower = 0
+for ch in s:
+    if ch.isupper():
+        upper += 1
+    elif ch.islower():
+        lower += 1
+print("Uppercase =", upper, "Lowercase =", lower)
+
+#43
+s = input()
+for ch in s:
+    print(ch, ord(ch))
+
+#44
+s = input()
+result = ""
+for ch in s:
+    if ch.lower() not in "aeiou":
+        result += ch
+print(result)

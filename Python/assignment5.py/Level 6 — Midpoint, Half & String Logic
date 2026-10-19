@@ -1,0 +1,75 @@
+#Level 6 — Midpoint, Half & String Logic
+#45
+s = input()
+print(s[len(s) // 2])
+
+#46
+s = input()
+mid = len(s) // 2
+print("First Half:", s[:mid])
+print("Second Half:", s[mid:])
+
+#47
+s = input()
+first = ""
+second = ""
+middle = ""
+mid = len(s) // 2
+for i in range(len(s)):
+    if i < mid:
+        first += s[i]
+    elif len(s) % 2 == 1 and i == mid:
+        middle = s[i]
+    else:
+        second += s[i]
+print("First Half:", first)
+if middle:
+    print("Middle:", middle)
+print("Second Half:", second)
+
+#48
+s = input()
+mid = len(s) // 2
+same = True
+for i in range(mid):
+    if s[i] != s[i + mid]:
+        same = False
+if same:
+    print("Equal Halves")
+else:
+    print("Different Halves")
+
+#49
+s = input()
+symmetric = True
+for i in range(len(s) // 2):
+    if s[i] != s[len(s) - 1 - i]:
+        symmetric = False
+if symmetric:
+    print("Symmetric")
+else:
+    print("Not Symmetric")
+
+#50
+s = input()
+for i in range(0, len(s), 2):
+    print(s[i], end="")
+print()
+
+#51
+s = input()
+even = 0
+odd = 0
+for i in range(len(s)):
+    if i % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+print("Even Index =", even, "Odd Index =", odd)
+
+#52
+s = input()
+result = ""
+for i in range(0, len(s), 2):
+    result += s[i + 1] + s[i]
+print(result)
