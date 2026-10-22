@@ -302,3 +302,135 @@ for (let i = 0; i < ages.length; i++) {
     }
     console.log(ages[i]);
 }
+
+Part D] Reverse For Loop
+Write a reverse for loop that prints all numbers from 50 down to 1 that are divisible by 3 but not divisible by 9.
+
+Write a reverse for loop that calculates the product of all odd digits of a given number (example: 4729 → 7 × 9 = 63).
+
+Given the string "Programming", use a reverse for loop to create a new string that contains only the consonants in reverse order.
+
+Write a reverse for loop that prints the first 15 Fibonacci numbers in reverse order (starting from the 15th number down to 0).
+
+Use a reverse for loop to check whether a given number is a palindrome by comparing digits from both ends (without converting the number to a string).
+
+Given an array [12, 45, 7, 23, 56, 89, 34], use a reverse for loop to find the largest number that is less than 50 (do not use any built-in methods).
+
+Given an array of temperatures [32, 28, 41, 19, 35, 27, 38], use a reverse for loop to count how many days were colder than 30°C, starting from the last day.
+
+Write a reverse for loop that converts a decimal number to its binary representation but prints the binary digits in reverse order (example: 13 → 1011 becomes 1101).
+
+(Reverse For Loop + break)
+Given an array [90, 85, 70, 95, 60, 88, 75], use a reverse for loop to find the first score (starting from the end) that is greater than 80. Print that score and its index, then stop the loop using break.
+
+(Reverse For Loop + continue)
+Write a reverse for loop that prints numbers from 40 down to 1, but skips every number that is a perfect square using continue.
+
+Answer:
+#1
+for (let i = 50; i >= 1; i--) {
+    if (i % 3 === 0 && i % 9 !== 0) {
+        console.log(i);
+    }
+}
+#2
+let n = 4729;
+let product = 1;
+
+for (; n > 0; n = Math.floor(n / 10)) {
+    let digit = n % 10;
+    if (digit % 2 !== 0) {
+        product *= digit;
+    }
+}
+
+console.log(product);
+#3
+let str = "Programming";
+let result = "";
+
+for (let i = str.length - 1; i >= 0; i--) {
+    if (!"aeiouAEIOU".includes(str[i])) {
+        result += str[i];
+    }
+}
+
+console.log(result);
+#4
+let a = 0, b = 1;
+let arr = [];
+
+for (let i = 0; i < 15; i++) {
+    arr[i] = a;
+    let c = a + b;
+    a = b;
+    b = c;
+}
+
+for (let i = 14; i >= 0; i--) {
+    console.log(arr[i]);
+}
+#5
+let n = 121;
+let temp = n;
+let rev = 0;
+
+for (; temp > 0; temp = Math.floor(temp / 10)) {
+    rev = rev * 10 + temp % 10;
+}
+
+console.log(n === rev ? "Palindrome" : "Not Palindrome");
+#6
+let arr = [12, 45, 7, 23, 56, 89, 34];
+let largest = -Infinity;
+
+for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] < 50 && arr[i] > largest) {
+        largest = arr[i];
+    }
+}
+
+console.log(largest);
+#7
+let arr = [32, 28, 41, 19, 35, 27, 38];
+let count = 0;
+
+for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] < 30) {
+        count++;
+    }
+}
+
+console.log(count);
+#8
+let n = 13;
+
+for (; n > 0; n = Math.floor(n / 2)) {
+    console.log(n % 2);
+}
+#9
+let arr = [90, 85, 70, 95, 60, 88, 75];
+
+for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] > 80) {
+        console.log(arr[i], i);
+        break;
+    }
+}
+#10
+for (let i = 40; i >= 1; i--) {
+    let square = false;
+
+    for (let j = 1; j * j <= i; j++) {
+        if (j * j === i) {
+            square = true;
+            break;
+        }
+    }
+
+    if (square) {
+        continue;
+    }
+
+    console.log(i);
+}
