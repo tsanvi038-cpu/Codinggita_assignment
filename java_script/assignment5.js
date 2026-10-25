@@ -434,3 +434,562 @@ for (let i = 40; i >= 1; i--) {
 
     console.log(i);
 }
+
+Part E] Nested For Loop Questions
+Print the following right-triangle number pattern using nested for loops (without hard-coding any row):
+1
+2 3
+4 5 6
+7 8 9 10
+Print the following right-triangle number pattern using nested for loops (without hard-coding any row):
+1
+2 2
+3 3 3
+4 4 4 4
+Print the following right-triangle number pattern using nested for loops (without hard-coding any row):
+1
+2 3
+4 5 6
+7 8 9 10
+Print the following pattern using nested for loops (without hard-coding any row):
+* * * *
+*     *
+*     *
+* * * *
+Print the following right-triangle number pattern using nested for loops (without hard-coding any row):
+#
+$ $
+# # #
+$ $ $ $
+# # # # #
+$ $ $ $ $ $
+Print the following right-triangle alphabet pattern using nested for loops (without hard-coding any row):
+A
+A B
+A B C
+A B C D
+A B C D E
+Print this hollow right-triangle star pattern using nested loops:
+*
+* *
+*   *
+*     *
+* * * * *
+Print the following reverse right-angle star pattern using nested for loops:
+*****
+****
+***
+**
+*
+Print the following reverse right-angle pattern where each row contains the row number repeated, using nested loops:
+5 5 5 5 5
+4 4 4 4
+3 3 3
+2 2
+1
+Print this reverse right-angle number pattern using nested for loops:
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+Print the following reverse right-angle pattern of consecutive numbers using nested loops:
+15 14 13 12 11
+10  9  8  7
+ 6  5  4
+ 3  2
+ 1
+Print this reverse right-angle hollow star pattern (only the borders should have stars) using nested for loops:
+* * * * *
+*     *
+*   *
+* *
+*
+Using nested for loops, print a 5×5 square of stars (*) but skip printing a star whenever the row number equals the column number (i.e., leave the main diagonal empty).
+
+Write nested for loops that print the multiplication table of numbers from 1 to 5, but only show the products that are even. (Each table should start on a new line.)
+
+Write a program to print a symmetric number palindrome pyramid on each row.
+
+    1
+  1 2 1
+1 2 3 2 1
+
+Answer:
+    1.
+let num=1
+for(let i = 1;i<=4;i++){
+  let bag = "";
+  for(let j=1;j<=i;j++){
+    bag+=num+" "
+    num++
+  }
+  console.log(bag)
+}
+
+2.
+for(let i=1; i <= 4; i++){
+  let bag = "";
+  for(let j=1; j <= i; j++){
+  bag +=i+" "
+  }
+ console.log(bag)
+}
+
+3.
+num=1;
+for(let i = 1;i<=4;i++){
+  row=""
+  for(let j=1;j<=i;j++){
+    row+=num+" "
+    num++
+  }
+  console.log(row)
+}
+
+4.
+for (let i = 1; i <= 4; i++) {
+    let row = "";
+    for (let j = 1; j <= 4; j++) {
+        if (i == 1 || i == 4 || j == 1 || j == 4) {
+            row += "* ";
+        } else {
+            row += "  ";
+        }
+    }
+    console.log(row);
+}
+
+5.
+for (let i = 1; i <= 6; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        if (i % 2 == 1) {
+            row += "# ";
+        } else {
+            row += "$ ";
+        }
+    }
+    console.log(row);
+}
+
+6.
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        if (j == 1) row += "A ";
+        else if (j == 2) row += "B ";
+        else if (j == 3) row += "C ";
+        else if (j == 4) row += "D ";
+        else if (j == 5) row += "E ";
+    }
+    console.log(row);
+}
+    
+7.
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        if (j == 1 || j == i || i == 5) {
+            row += "* ";
+        } else {
+            row += "  ";
+        }
+    }
+    console.log(row);
+}
+
+8.
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+    console.log(row);
+}
+
+9.
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += i + " ";
+    }
+    console.log(row);
+}
+
+10.
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += j + " ";
+    }
+    console.log(row);
+}
+
+11.
+let num = 15;
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += num + " ";
+        num--;
+    }
+    console.log(row);
+}
+
+12.
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        if (i == 5 || j == 1 || j == i) {
+            row += "* ";
+        } else {
+            row += "  ";
+        }
+    }
+    console.log(row);
+}
+
+13.
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+    for (let j = 1; j <= 5; j++) {
+        if (i != j) {
+            row += "* ";
+        } else {
+            row += "  ";
+        }
+    }
+    console.log(row);
+}
+
+14.
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+    for (let j = 1; j <= 10; j++) {
+        let product = i * j;
+
+        if (product % 2 == 0) {
+            row += product + " ";
+        }
+    }
+    console.log(i + " table: " + row);
+}
+
+15.
+for (let i = 1; i <= 3; i++) {
+    let row = "";
+    for (let s = 1; s <= 3 - i; s++) {
+        row += "  ";
+    }
+    for (let j = 1; j <= i; j++) {
+        row += j + " ";
+    }
+    for (let j = i - 1; j >= 1; j--) {
+        row += j + " ";
+    }
+    console.log(row);
+}
+
+Part E] While Loop
+Q1. Print Numbers
+Write a while loop to print numbers from 1 to 10.
+
+Q2. Sum of Natural Numbers
+Write a while loop to calculate the sum of the first 10 natural numbers.
+
+Q3. Multiplication Table
+Write a while loop to print the multiplication table of a given number from 1 to 10.
+
+Example: Input: 5
+
+Output: 5 x 1 = 5 5 x 2 = 10 ... 5 x 10 = 50
+
+Q4. Count the Digits
+Write a while loop to count the total number of digits in a given positive integer.
+
+Example: Input: 58372 Output: 5
+
+Q5. Reverse a Number
+Write a while loop to reverse the digits of a given positive integer.
+
+Example: Input: 12345 Output: 54321
+
+Q6. Sum of Digits
+Write a while loop to calculate the sum of all digits of a given number.
+
+Example: Input: 4729 Output: 22
+
+Q7. Print Numbers with Conditions
+Write a while loop to print all numbers between 1 and 100 that are divisible by both 3 and 5 but not by 7.
+
+Q8. Calculate Factorial
+Write a while loop to calculate the factorial of a given non-negative integer.
+
+Example: Input: 5 Output: 120
+
+Q9. Check a Palindrome Number
+Write a while loop to check whether a given number is a palindrome without converting it into a string.
+
+Example: Input: 121 Output: Palindrome number
+
+Q10. Convert Decimal to Binary
+Write a while loop to convert a positive decimal integer into its binary representation without using built-in methods such as toString(2).
+
+Example: Input: 13 Output: 1101
+
+Answer:
+    1.
+let i = 1;
+while (i <= 10) {
+    console.log(i);
+    i++;
+}
+
+2.
+let i = 1;
+let sum = 0;
+while (i <= 10) {
+    sum += i;
+    i++;
+}
+console.log(sum);
+
+3.
+let num = 5;
+let i = 1;
+while (i <= 10) {
+    console.log(num + " x " + i + " = " + (num * i));
+    i++;
+}
+
+4.
+let num = 58372;
+let count = 0;
+while (num > 0) {
+    count++;
+    num = Math.floor(num / 10);
+}
+console.log(count);
+
+5.
+let num = 12345;
+let rev = 0;
+while (num > 0) {
+    let digit = num % 10;
+    rev = rev * 10 + digit;
+    num = Math.floor(num / 10);
+}
+console.log(rev);
+
+6.
+let num = 4729;
+let sum = 0;
+while (num > 0) {
+    let digit = num % 10;
+    sum += digit;
+    num = Math.floor(num / 10);
+}
+console.log(sum);
+
+7.
+let i = 1;
+while (i <= 100) {
+    if (i % 3 == 0 && i % 5 == 0 && i % 7 != 0) {
+        console.log(i);
+    }
+    i++;
+}
+
+8.
+let num = 5;
+let i = 1;
+let fact = 1;
+while (i <= num) {
+    fact *= i;
+    i++;
+}
+console.log(fact);
+
+9.
+let num = 121;
+let original = num;
+let rev = 0;
+while (num > 0) {
+    let digit = num % 10;
+    rev = rev * 10 + digit;
+    num = Math.floor(num / 10);
+}
+if (original == rev) {
+    console.log("Palindrome number");
+} else {
+    console.log("Not a palindrome number");
+}
+
+10.
+let num = 13;
+let binary = "";
+while (num > 0) {
+    let rem = num % 2;
+    binary = rem + binary;
+    num = Math.floor(num / 2);
+}
+console.log(binary);
+
+Part F]: Do-While Loop
+Q1. Print Numbers in Reverse
+Write a do-while loop to print numbers from 10 down to 1.
+
+Q2. Print Even Numbers
+Write a do-while loop to print all even numbers between 1 and 20.
+
+Q3. Sum of Natural Numbers
+Write a do-while loop to calculate the sum of the first n natural numbers.
+
+Example: Input: 5 Output: 15
+
+Q4. Product of Digits
+Write a do-while loop to calculate the product of all digits of a given positive integer.
+
+Example: Input: 234 Output: 24
+
+Q5. Find the First Digit
+Write a do-while loop to find the leftmost digit of a given positive integer.
+
+Example: Input: 58372 Output: 5
+
+Q6. Calculate a Power
+Write a do-while loop to calculate the power of a number without using Math.pow() or the exponentiation operator **.
+
+Example: Input: Base = 3, Exponent = 4 Output: 81
+
+Q7. Print Multiples with Conditions
+Write a do-while loop to print all numbers between 1 and 100 that are divisible by 4 but not by 8.
+
+Q8. Check a Palindrome Number
+Write a do-while loop to check whether a given positive integer is a palindrome without converting it into a string.
+
+Example: Input: 1221 Output: Palindrome number
+
+Q9. Find the Greatest Common Divisor (GCD)
+Write a do-while loop to find the greatest common divisor of two positive integers.
+
+Example: Input: 48, 18 Output: 6
+
+Q10. Convert Decimal to Binary
+Write a do-while loop to convert a non-negative decimal integer into binary without using built-in conversion methods.
+
+Example: Input: 13 Output: 1101
+
+Challenge: Handle the input 0 correctly as well.
+
+Answer:
+1.
+let i = 10;
+do {
+    console.log(i);
+    i--;
+} while (i >= 1);
+
+2.
+let i = 2;
+do {
+    console.log(i);
+    i += 2;
+} while (i <= 20);
+
+3.
+let n = 5;
+let i = 1;
+let sum = 0;
+do {
+    sum += i;
+    i++;
+} while (i <= n);
+console.log(sum);
+
+4.
+let num = 234;
+let product = 1;
+do {
+    let digit = num % 10;
+    product *= digit;
+    num = Math.floor(num / 10);
+} while (num > 0);
+console.log(product);
+
+5.
+let num = 58372;
+do {
+    if (num < 10) {
+        break;
+    }
+    num = Math.floor(num / 10);
+} while (num > 0);
+console.log(num);
+
+6.
+let base = 3;
+let exponent = 4;
+let i = 1;
+let result = 1;
+do {
+    if (i > exponent) {
+        break;
+    }
+    result *= base;
+    i++;
+} while (i <= exponent);
+console.log(result);
+
+7.
+let i = 1;
+do {
+    if (i % 4 == 0 && i % 8 != 0) {
+        console.log(i);
+    }
+    i++;
+} while (i <= 100);
+
+8.
+let num = 1221;
+let original = num;
+let rev = 0;
+do {
+    let digit = num % 10;
+    rev = rev * 10 + digit;
+    num = Math.floor(num / 10);
+} while (num > 0);
+
+if (original == rev) {
+    console.log("Palindrome number");
+} else {
+    console.log("Not a palindrome number");
+}
+
+9.
+let a = 48;
+let b = 18;
+let rem;
+do {
+    rem = a % b;
+    a = b;
+    b = rem;
+} while (b != 0);
+console.log(a);
+
+10.
+let num = 13;
+let binary = "";
+if (num == 0) {
+    binary = "0";
+} else {
+    do {
+        let rem = num % 2;
+        binary = rem + binary;
+        num = Math.floor(num / 2);
+    } while (num > 0);
+}
+console.log(binary);
