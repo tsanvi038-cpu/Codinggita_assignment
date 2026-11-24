@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon.in Clone</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #d5e1e3;
+            color: #111;
+        }
+
+        /* TOP NAVIGATION */
+
+        .navbar {
+            height: 62px;
+            width: 100%;
+            background-color: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 15px;
+            gap: 12px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .logo small {
+            display: block;
+            height: 4px;
+            width: 45px;
+            border-bottom: 4px solid #ff9900;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+
+        .address {
+            min-width: 190px;
+            color: #ddd;
+            font-size: 13px;
+        }
+
+        .address strong {
+            color: white;
+            font-size: 15px;
+        }
+
+        /* SEARCH BAR */
+
+        .search {
+            height: 44px;
+            display: flex;
+            flex: 1;
+            min-width: 150px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .search select {
+            width: 55px;
+            border: none;
+            background-color: #eee;
+            padding: 8px;
+            color: #333;
+        }
+
+        .search input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search button {
+            width: 55px;
+            background-color: #febd69;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .country {
+            font-size: 22px;
+            white-space: nowrap;
+        }
+
+        .account, .orders, .cart {
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .account strong, .orders strong {
+            font-size: 15px;
+        }
+
+        .cart {
+            font-size: 20px;
+        }
+
+        /* SECOND NAVIGATION */
+
+        .sub-navbar {
+            height: 44px;
+            background-color: #232f3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 23px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .sub-navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sub-navbar .menu {
+            font-size: 22px;
+        }
+
+        .prime-day {
+            margin-left: auto;
+            font-size: 23px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 190px;
+        }
+
+        .prime-day span {
+            font-size: 12px;
+            display: block;
+        }
+
+        /* MAIN BACKGROUND */
+
+        .main {
+            width: 100%;
+            min-height: 800px;
+            padding: 0 12px;
+            background: linear-gradient(to bottom, #2e6574, #a8bfc2 65%, #d5e1e3);
+        }
+
+        /* MAIN BANNER */
+
+        .banner {
+            height: 315px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            background: linear-gradient(110deg, #285563, #448a9b, #244c59);
+        }
+
+        .banner-content {
+            width: 28%;
+            padding-left: 10px;
+        }
+
+        .banner-content h1 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .banner-content h2 {
+            font-size: 25px;
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 22px;
+        }
+
+        .banner-content p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .banner-content .features {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .banner-products {
+            width: 36%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .banner-products img {
+            width: 30%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .banner-products .keyboard {
+            width: 55%;
+            height: 180px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 40%;
+            font-size: 55px;
+            color: white;
+            font-weight: normal;
+        }
+
+        .left {
+            left: 25px;
+        }
+
+        .right {
+            right: 25px;
+        }
+
+        /* PRODUCT CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1.1fr 1.1fr 1.1fr 1.1fr;
+            gap: 22px;
+            padding: 0 24px;
+            margin-top: -2px;
+            position: relative;
+        }
+
+        .card {
+            background-color: #fffafa;
+            padding: 23px;
+            min-height: 440px;
+        }
+
+        .card h2 {
+            font-size: 23px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        /* SMALL PRODUCT GRID */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 18px;
+        }
+
+        .product {
+            min-width: 0;
+        }
+
+        .product img {
+            width: 100%;
+            height: 115px;
+            object-fit: cover;
+        }
+
+        .product p {
+            color: #565959;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        .shop-link {
+            display: inline-block;
+            margin-top: 35px;
+            color: #007185;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* CLEARANCE CARD */
+
+        .clearance img {
+            width: 100%;
+            height: 343px;
+            object-fit: cover;
+        }
+
+        .clearance .shop-link {
+            margin-top: 18px;
+        }
+
+        /* SIGN IN CARD */
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .signin {
+            width: 100%;
+            min-height: 167px;
+            background-color: #fffafa;
+            padding: 22px 25px;
+        }
+
+        .signin h2 {
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .signin button {
+            width: 100%;
+            height: 40px;
+            background-color: #ffd814;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        /* LAPTOP ADVERTISEMENT */
+
+        .laptop-ad {
+            width: 86%;
+            min-height: 245px;
+            background: linear-gradient(120deg, #70e1b4, #e1f6a5);
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .laptop-ad h2 {
+            font-size: 23px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .laptop-ad img {
+            width: 90%;
+            height: 140px;
+            object-fit: contain;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 1100px) {
+            .navbar {
+                gap: 8px;
+            }
+
+            .address {
+                display: none;
+            }
+
+            .sub-navbar {
+                gap: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .banner-content {
+                width: 40%;
+            }
+
+            .banner-products {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                height: auto;
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .search {
+                order: 2;
+                flex-basis: 100%;
+            }
+
+            .account, .orders {
+                display: none;
+            }
+
+            .sub-navbar {
+                gap: 15px;
+                overflow-x: auto;
+            }
+
+            .prime-day {
+                display: none;
+            }
+
+            .main {
+                padding: 0 5px;
+            }
+
+            .banner {
+                height: 300px;
+            }
+
+            .banner-content {
+                width: 50%;
+                padding-left: 20px;
+            }
+
+            .banner-content h1 {
+                font-size: 23px;
+            }
+
+            .banner-content h2 {
+                font-size: 18px;
+            }
+
+            .banner-content p {
+                font-size: 13px;
+            }
+
+            .banner-products {
+                width: 45%;
+            }
+
+            .banner-products img {
+                height: 110px;
+            }
+
+            .banner-products .keyboard {
+                height: 110px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                padding: 0 10px;
+                gap: 15px;
+            }
+
+            .card {
+                min-height: auto;
+            }
+
+            .product img {
+                height: 150px;
+            }
+
+            .clearance img {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            amazon<span>.in</span>
+            <small></small>
+        </div>
+
+        <div class="address">
+            Hello<br>
+            <strong>♧ Select your address</strong>
+        </div>
+
+        <div class="search">
+            <select>
+                <option>All</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Books</option>
+            </select>
+
+            <input type="text">
+
+            <button>⌕</button>
+        </div>
+
+        <div class="country">
+            🇮🇳⌄
+        </div>
+
+        <div class="account">
+            Hello, Sign in<br>
+            <strong>Account & Lists ⌄</strong>
+        </div>
+
+        <div class="orders">
+            Returns<br>
+            <strong>& Orders</strong>
+        </div>
+
+        <div class="cart">
+            🛒 <strong>Cart</strong>
+        </div>
+
+    </header>
+
+    <!-- SECOND NAVIGATION -->
+
+    <nav class="sub-navbar">
+
+        <a href="#" class="menu">☰ All</a>
+        <a href="#">Best Sellers</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Fashion</a>
+        <a href="#">Electronics</a>
+        <a href="#">Books</a>
+        <a href="#">Prime ⌄</a>
+        <a href="#">New Releases</a>
+        <a href="#">Home & Kitchen</a>
+        <a href="#">Amazon Pay</a>
+
+        <div class="prime-day">
+            prime day
+            <span>23rd - 24th July</span>
+        </div>
+
+    </nav>
+
+    <!-- MAIN SECTION -->
+
+    <main class="main">
+
+        <!-- MAIN BANNER -->
+
+        <section class="banner">
+
+            <div class="arrow left">‹</div>
+
+            <div class="banner-content">
+
+                <h1>Under ₹1,999</h1>
+
+                <h2>
+                    Top rated Electronics<br>
+                    & accessories
+                </h2>
+
+                <p>Extra up to 10% off via coupons</p>
+
+                <div class="features">
+                    ◉ PAY ON DELIVERY
+                    &nbsp; | &nbsp;
+                    ◉ EASY RETURNS
+                </div>
+
+            </div>
+
+            <div class="banner-products">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+                    alt="Smart watch">
+
+                <img
+                    src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500"
+                    alt="Wireless earphones">
+
+                <img
+                    class="keyboard"
+                    src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700"
+                    alt="Computer keyboard">
+
+            </div>
+
+            <div class="arrow right">›</div>
+
+        </section>
+
+        <!-- PRODUCT CARDS -->
+
+        <section class="cards">
+
+            <!-- FIRST CARD -->
+
+            <article class="card">
+
+                <h2>Upgrade your home | Amazon Brands & more</h2>
+
+                <div class="product-grid">
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500"
+                            alt="Smart LED TV">
+                        <p>Smart LED TVs</p>
+                    </div>
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1631545806609-4b8a6e7e2e8d?w=500"
+                            alt="Home appliances">
+                        <p>Appliances</p>
+                    </div>
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500"
+                            alt="Furniture">
+                        <p>Furniture</p>
+                    </div>
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=500"
+                            alt="Kitchen products">
+                        <p>Kitchen products</p>
+                    </div>
+
+                </div>
+
+                <a href="#" class="shop-link">Shop now</a>
+
+            </article>
+
+            <!-- SECOND CARD -->
+
+            <article class="card">
+
+                <h2>Revamp your home in style</h2>
+
+                <div class="product-grid">
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500"
+                            alt="Bedsheets and curtains">
+                        <p>Bedsheets, curtains & more</p>
+                    </div>
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500"
+                            alt="Home decoration">
+                        <p>Home decoration</p>
+                    </div>
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=500"
+                            alt="Home storage">
+                        <p>Home storage</p>
+                    </div>
+
+                    <div class="product">
+                        <img
+                            src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500"
+                            alt="Lighting solutions">
+                        <p>Lighting solutions</p>
+                    </div>
+
+                </div>
+
+                <a href="#" class="shop-link">Explore all</a>
+
+            </article>
+
+            <!-- THIRD CARD -->
+
+            <article class="card clearance">
+
+                <h2>Up to 70% off | Clearance store</h2>
+
+                <img
+                    src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=700"
+                    alt="Laptop and electronics">
+
+                <a href="#" class="shop-link">See more</a>
+
+            </article>
+
+            <!-- FOURTH COLUMN -->
+
+            <div class="right-column">
+
+                <article class="signin">
+
+                    <h2>Sign in for your best experience</h2>
+
+                    <button>Sign in securely</button>
+
+                </article>
+
+                <article class="laptop-ad">
+
+                    <h2>
+                        LAPTOPS<br>
+                        FROM TOP BRANDS
+                    </h2>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700"
+                        alt="Laptop">
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
