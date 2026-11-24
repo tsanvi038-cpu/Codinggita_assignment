@@ -1,0 +1,171 @@
+*{
+    margin: 0%;
+}
+nav{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero{
+    height: 330px;
+    background-image: url(kw-background.png);
+    border: 2px solid;
+    background-size: cover;
+    color: white;
+    font-size: 33px;
+    padding-left: 150px;
+    padding-top: 60px;
+    padding-bottom: 0%;
+}
+.books{
+    height: 250px;
+    margin: 130px 0px;
+    padding: 0%;
+}
+.title{
+    height: 30px;
+    margin: 0%;
+    padding-left: 72px;
+    align-items: center;
+    display: flex;
+}
+.cards{
+    height: 220px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.c1{
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.img1{
+    height: 165px;
+    width: 120px;
+    background-image: url(book1.png);
+    background-size: cover;
+}
+.name{
+    font-size: 13px;
+    font-weight: bolder;
+}
+.auth{
+    font-size: 10px;
+}
+.btm{
+    width: 120px;
+    font-size: 15px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+}
+.c{
+    width: 44px;
+    background-color: rgb(99, 99, 223);
+    display: flex;
+    font-size: 14px;
+    color: white;
+    border-radius: 2px;
+}
+.img2{
+    height: 165px;
+    width: 120px;
+    background-image: url(book2.png);
+    background-size: cover;
+}
+.img3{
+    height: 165px;
+    width: 120px;
+    background-image: url(book3.png);
+    background-size: cover;
+}
+.img4{
+    height: 165px;
+    width: 120px;
+    background-image: url(book4.png);
+    background-size: cover;
+}
+.img5{
+    height: 165px;
+    width: 120px;
+    background-image: url(book5.png);
+    background-size: cover;
+}
+.img6{
+    height: 165px;
+    width: 120px;
+    background-image: url(book6.png);
+    background-size: cover;
+}
+.img7{
+    height: 165px;
+    width: 180px;
+    background-image: url(dart-board.png);
+    background-size: cover;
+}
+.img8{
+    height: 165px;
+    width: 180px;
+    background-image: url(connect-four.png);
+    background-size: cover;
+}
+.img9{
+    height: 165px;
+    width: 180px;
+    background-image: url(jenga.png);
+    background-size: cover;
+}
+.img10{
+    height: 165px;
+    width: 180px;
+    background-image: url(monopoly.png);
+    background-size: cover;
+}
+.cards1{
+    height: 220px;
+    display: flex;
+    justify-content: space-around;
+}
+.btm1{
+    width: 180px;
+    font-size: 15px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+}
+.gifts{
+     height: 250px;
+    margin: 130px 0px;
+    padding: 0%;
+}
+.img11{
+    height: 165px;
+    width: 180px;
+    background-image: url(bookmarks.png);
+    background-size: cover;
+}
+.img12{
+    height: 165px;
+    width: 180px;
+    background-image: url(birthday-card.png);
+    background-size: cover;
+}
+.img13{
+    height: 165px;
+    width: 180px;
+    background-image: url(stuffed-toy.png);
+    background-size: cover;
+}
+.img14{
+    height: 165px;
+    width: 180px;
+    background-image: url(dream-catcher.png);
+    background-size: cover;
+}
